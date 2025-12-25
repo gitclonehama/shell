@@ -6,6 +6,8 @@ int main(int argc, char *argv[]) {
   // Flush after every printf
   setbuf(stdout, NULL);
 
+  printf("$ ");
+
   // Get user input
   char command[1024];
   fgets(command, sizeof(command), stdin);
