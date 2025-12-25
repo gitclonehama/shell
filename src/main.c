@@ -15,9 +15,9 @@ int main(int argc, char *argv[]) {
   // Remove the trailing '\n'
   input[strcspn(input, "\n")] = '\0';
 
-  printf("%s: command not found\n", input);
-
   while (strcmp(input, "exit")) {
+    printf("%s: command not found\n", input);
+
     printf("$ ");
 
     // Get user input
@@ -25,8 +25,6 @@ int main(int argc, char *argv[]) {
 
     // Remove the trailing '\n'
     input[strcspn(input, "\n")] = '\0';
-
-    printf("%s: command not found\n", input);
   }
 
   return 0;
