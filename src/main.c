@@ -9,13 +9,25 @@ int main(int argc, char *argv[]) {
   printf("$ ");
 
   // Get user input
-  char command[1024];
-  fgets(command, sizeof(command), stdin);
+  char input[1024];
+  fgets(input, sizeof(input), stdin);
 
   // Remove the trailing '\n'
-  command[strcspn(command, "\n")] = '\0';
+  input[strcspn(input, "\n")] = '\0';
 
-  printf("%s: command not found\n", command);
+  printf("%s: command not found\n", input);
+
+  while (strcmp(input, "exit")) {
+    printf("$ ");
+
+    // Get user input
+    fgets(input, sizeof(input), stdin);
+
+    // Remove the trailing '\n'
+    input[strcspn(input, "\n")] = '\0';
+
+    printf("%s: command not found\n", input);
+  }
 
   return 0;
 }
