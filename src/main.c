@@ -15,6 +15,10 @@ int main(int argc, char *argv[]) {
     // Remove the trailing '\n'
     input[strcspn(input, "\n")] = '\0';
 
+    if (strcmp(input, "exit") == 0) {
+      return 0;
+    }
+
     char *echo = strstr(input, "echo");
     if (echo) {
       printf("%s\n", echo + sizeof("echo"));
