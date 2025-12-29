@@ -40,12 +40,13 @@ int main(int argc, char *argv[]) {
       }
     } else if (strcmp(command, "type") == 0) {
       if (space_ptr != NULL) {
-        if (strcmp(space_ptr + 1, "echo") == 0 ||
-            strcmp(space_ptr + 1, "exit") == 0 ||
-            strcmp(space_ptr + 1, "type") == 0) {
-          printf("%s is a shell builtin\n", command);
+        char *type_command = space_ptr + 1;
+        if (strcmp(type_command, "echo") == 0 ||
+            strcmp(type_command, "exit") == 0 ||
+            strcmp(type_command, "type") == 0) {
+          printf("%s is a shell builtin\n", type_command);
         } else {
-          printf("%s: command not found\n", command);
+          printf("%s: command not found\n", type_command);
         }
       }
     } else {
